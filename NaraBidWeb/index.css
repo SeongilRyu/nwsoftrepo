@@ -11,9 +11,10 @@ body {
 }
 #contents {
   background-color: none;
+  float:left;
 }
 #left {
-    width: 120px;
+    width: 18%;
     height:300px;
     float: left;
     padding: 1px;
@@ -22,6 +23,10 @@ body {
 }
 #center {
   float: left;
+  width: 80%;
+}
+table {
+  width: 100%;
 }
 th {
   background-color: #6495ed;
