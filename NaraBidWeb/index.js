@@ -2,11 +2,17 @@ window.onload = function() {
   document.querySelector('#greeting').innerText =
     '날짜:' + new Date();
     //getHttp();
-    getHttp1();
+    document.getElementById("btnGet").addEventListener("click", getHttp1);
+    //---getHttp1();
 };
 function getHttp1() {
+    document.getElementById("id01").innerHTML = "";
     //var myUrl ="http://www.w3schools.com/website/Customers_MYSQL.php";
-    var myUrl = "http://openapi.g2b.go.kr/openapi/service/rest/BidPublicInfoService/getBidPblancListInfoFcltyBsisAmount?sDate=&eDate=&pageNo=&numOfRows=&serviceKey=Kp7AOPELDDH%2FlM4%2BjmRtklFuw3J1YIjQeJcwxs8NIeQNMKBd3KwY4Tfyb%2FBF4I4%2BQILc%2BKqI2nRdvd%2Fdu5jnQw%3D%3D&bidNum=20141124315&_type=json";
+    var myUrl = "http://openapi.g2b.go.kr/openapi/service/rest/BidPublicInfoService/getBidPblancListInfoFcltyBsisAmount?";
+    myUrl += "sDate=&eDate=&pageNo=&numOfRows=";
+    myUrl += "&serviceKey=Kp7AOPELDDH%2FlM4%2BjmRtklFuw3J1YIjQeJcwxs8NIeQNMKBd3KwY4Tfyb%2FBF4I4%2BQILc%2BKqI2nRdvd%2Fdu5jnQw%3D%3D";
+    myUrl += "&bidNum=" + document.getElementsByName("txtBidNo")[0].value;  //20141124315
+    myUrl += "&_type=json";
     var xhr = new XMLHttpRequest();
     xhr.open('GET', myUrl);
     xhr.onload = function(e) {
@@ -28,9 +34,9 @@ function myFunc(response) {
     var item=jsonItems.item;
     alert(item.toString());
     var i;
+    alert(item.공고명);
     var out = "<table><tr><th>입찰공고번호</th><th>공고명</th><th>기초예가</th><th>공개시각</th></tr>";
     //for (x in jsonItems) {
-        alert(item.공고명);
         out += "<tr><td>" +
         item.입찰공고번호 +"-" + item.입찰공고차수 +
         "</td><td>" +
