@@ -1,2 +1,0 @@
-# nwsoftrepo
-Repository of NwSoft
