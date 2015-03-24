@@ -1,5 +1,7 @@
 package com.nwsoft.jva;
 
+import java.util.ArrayList;
+
 public class MainStart {
 
 	/**
@@ -29,6 +31,21 @@ public class MainStart {
 		s.setName("Chulsoo");
 		int avg = (95 + 95 + 90) / 3;
 		System.out.println(s.toString() +" avg= " + avg);
+		
+		//-------------------------
+		//ArrayList test
+		//-------------------------
+		ArrayList<String> al = new ArrayList<String>();
+		al.add("영태");
+		al.add("호찬");
+		al.add("창수");
+		System.out.println("ArrayList.toString: " + al.toString());
+		//
+		ArrayList<Student> students = new ArrayList<Student>();
+		students.add(new Student("010731",80,70,60));
+		students.add(new Student("010701",85,75,65));
+		System.out.println("students: " + students.toString());
+		
 	}
 
 }
