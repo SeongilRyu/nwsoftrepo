@@ -23,8 +23,6 @@ public class UnmarshalPatients {
             System.out.printf("NAME: %s\n", p.getName());
             System.out.printf("DIAGNOSIS: %s\n\n", p.getDiagnosis());
         }
-        
-        
     }
     
     public static void main(String[] args) {
